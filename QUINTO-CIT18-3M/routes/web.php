@@ -8,4 +8,7 @@ Route::get('/greeting', function () {
 
 use App\Http\Controllers\GreetController;
 
-Route::get('/greetblade', [GreetController::class, 'show']);
+use App\Http\Controllers\TaskController;
+
+Route::get('/', [TaskController::class, 'index'])->name('task.index');
+Route::post('/', [TaskController::class, 'store'])->name('task.store');

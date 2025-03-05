@@ -2,18 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Tasks extends Model
 {
     use HasFactory;
 
-    // table associated with the model
-    protected $table = 'tasks';
+    protected $table = 'tasks'; // Ensure it matches the DB table name
 
-    // the primary key for the model
-    protected $primaryKey = 'id';
-
-    // Allow mass assignment on these fields
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['title', 'description', 'status']; // Define mass-assignable fields
 }
